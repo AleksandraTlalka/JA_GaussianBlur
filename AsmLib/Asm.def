@@ -1,0 +1,2 @@
+LIBRARY AsmLib
+EXPORTS MyProc1

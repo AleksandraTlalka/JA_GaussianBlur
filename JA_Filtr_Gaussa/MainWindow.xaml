@@ -1,0 +1,79 @@
+﻿<Window x:Class="JA_Filtr_Gaussa.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JA_Filtr_Gaussa"
+        mc:Ignorable="d"
+        Title="Filtr Gaussa - Aleksandra Tlałka" 
+        MinHeight="300" MinWidth="450"
+        Height="450" Width="800">
+    
+    <Grid Background="#4682B4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" MinHeight="300" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <Border Background="#6F8FAF"  Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="#1b1b1b" CornerRadius="15" BorderThickness="1" Margin="10">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Label x:Name="label1" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Wybierz bibliotekę DLL: " Foreground="White" Margin="28,0,31,0" Width="134" />
+                    <RadioButton x:Name="radioButtonASM" Grid.Column="0" Grid.Row="1" Content="asm"  VerticalAlignment="Top" HorizontalAlignment="Center" IsChecked="True" Foreground="White" />
+                    <RadioButton x:Name="radioButtonCS" Grid.Column="1" Grid.Row="1" Content="C#"  VerticalAlignment="Top" HorizontalAlignment="Center" IsChecked="True" Foreground="White" />
+
+                </Grid>
+                <Button x:Name="buttonRun" Grid.Column="2" Grid.Row="0" Height="40" Width="120" Foreground="White" Background="#87CEEB" Content="Zastosuj filtr" VerticalAlignment="Center" HorizontalAlignment="Center"  IsEnabled="False" Click="buttonFilter_Click"/>
+                <Button x:Name="buttonLoadImage" Grid.Column="1" Grid.Row="0" Height="40" Width="120" Foreground="White" Background="#87CEEB" Content="Wybierz obraz" HorizontalAlignment="Center"  VerticalAlignment="Center"  Click="buttonLoad_Click" />
+                <Label x:Name="labelLoadImage" Grid.Column="3" Grid.Row="0" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+            </Grid>
+        </Border>
+        
+        <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border Background="#87CEEB" Grid.Column="0" Grid.Row="1" BorderBrush="#1b1b1b" BorderThickness="1" Margin="10">
+                <Image x:Name="imageBefore"  />
+            </Border>
+            <Border Background="#87CEEB" Grid.Column="1" Grid.Row="1" BorderBrush="#1b1b1b" BorderThickness="1" Margin="10">
+                <Image x:Name="imageAfter"  />
+            </Border>
+            <Label x:Name="labelBefore" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="center" Content="Obraz przed filtrowaniem: " Foreground="White"/>
+            <Label x:Name="labelAfter"  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="center" Content="Obraz po filtrowaniu: " Foreground="White"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+            <Label x:Name="labelTime" Grid.Column="0" Grid.Row="0" Content="Czas wykonywania: " HorizontalAlignment="left"  VerticalAlignment="center" Foreground="White"/>
+        </Grid>
+    </Grid>
+</Window>
